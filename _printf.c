@@ -19,13 +19,14 @@ int _arr(const char x, va_list list)
 			{'\0', NULL}
 	};
 
-	int j = 0, cc = 0;
+	int j = 0, cc = -1;
 
 	while (array[j].form != '\0')
 	{
 		if (x == array[j].form)
 		{
-			cc += array[j].f(list);
+			cc = 0;
+			cc = array[j].f(list);
 		}
 		j++;
 	}
@@ -46,6 +47,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	while (format != NULL && format[i] != '\0')
 	{
+		a = 0;
 		if (format[i] == '%')
 		{
 			while (format[i + 1] == ' ')
@@ -56,7 +58,7 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				ch++;
 			}
-			else if ((format[i] == '%' && format[i + 1] != '\0') && a == 0)
+			else if ((format[i] == '%' && format[i + 1] != '\0') && a == -1)
 			{
 				_putchar(format[i]);
 				_putchar(format[i + 1]);
@@ -67,7 +69,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			_putchar(format[i]);
-			ch++;
+			ch++;	
 		}
 		ch += a;
 		i++;

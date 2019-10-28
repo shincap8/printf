@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdarg.h>
+#include <stdio.h>
 /**
  * ptr_char - function that prints a character
  * @list: list of functions
@@ -28,6 +29,8 @@ int ptr_str(va_list list)
 	char *s = va_arg(list, char *);
 	int i = 0;
 
+	if (s == NULL)
+		s = "(null)";
 	while (s[i])
 	{
 		_putchar(s[i]);
