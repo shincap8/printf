@@ -34,32 +34,32 @@ int _printf(const char *format, ...)
 		while (array[j].form != '\0')
 		{
 			if (format[i] == '%')
-		{
-			if (array[j].form == format[i + 1])
 			{
-				ch += array[j].f(list);
+				if (array[j].form == format[i + 1])
+				{
+					ch += array[j].f(list);
+					i++;
+					break;
+				}
+				if (format[i] == '%' &&  format[i + 1] == '\0')
+				{
+					_putchar('%');
+				}
+				if (format[i] == '%' && format[i + 1] == '%')
+				{
+				_putchar('%');
 				i++;
+				}
+			}
+			else
+			{
+				_putchar(format[i]);
+				ch++;
 				break;
 			}
-			if (format[i] == '%' &&  format[i + 1] == '\0')
-			{
-				_putchar('%');
-			}
-			if (format[i] == '%' && format[i + 1] == '%')
-			{
-				_putchar('%');
-				i++;
-			}
+			j++;
 		}
-		else
-		{
-			_putchar(format[i]);
-			ch++;
-			break;
-		}
-		j++;
-		}
-	i++;
+		i++;
 	}
 	va_end(list);
 	return (ch);
