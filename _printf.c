@@ -47,7 +47,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			a = arr(format[i + 1], list);
+			a = _arr(format[i + 1], list);
 			if (format[i] == '%' && format[i + 1] == '%')
 			{	
 				_putchar('%');
