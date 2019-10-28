@@ -42,17 +42,21 @@ int _printf(const char *format, ...)
 	va_list list;
 
 	va_start(list, format);
+	if (format == NULL)
+		return (-1);
 	while (format != NULL && format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
+			while (format[i + 1] == ' ')
+				i++;
 			a = _arr(format[i + 1], list);
 			if (format[i] == '%' && format[i + 1] == '%')
 			{
 				_putchar('%');
 				ch++;
 			}
-			else if (a == 0)
+			else if ((format[i] == '%' && format[i + 1] != '\0') && a == 0)
 			{
 				_putchar(format[i]);
 				_putchar(format[i + 1]);
@@ -67,7 +71,6 @@ int _printf(const char *format, ...)
 		}
 		ch += a;
 		i++;
-
 		if (format[i] == '%' && format[i + 1] == '\0')
 			return (-1);
 	}
