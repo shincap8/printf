@@ -24,12 +24,13 @@ int _arr(const char x, va_list list)
 	while (array[j].form != '\0')
 	{
 		if (x == array[j].form)
+		{		
 			cc += array[j].f(list);
-		else
-			return (-1);
+			return (cc);
+		}
 		j++;
 	}
-	return (cc);
+	return (-1);
 }
 /**
  * _printf - function that converts and prints arguments
@@ -44,20 +45,14 @@ int _printf(const char *format, ...)
 	va_start(list, format);
 	while (format != NULL && format[i] != '\0')
 	{
-		if (format[i] == '%' && format[i + 1] != '\0')
+		if (format[i] == '%')
 		{
-			a = _arr(format[i + 1], list);
-			i++;
-			break;
-		}
-		if ((format[i] == '%' &&  format[i + 1] == '\0') || a == -1)
-		{
-			return (-1);
-		}
-		if (format[i] == '%' && format[i + 1] == '%')
-		{
-			_putchar('%');
-			ch++;
+			a = arr(format[i + 1], list);
+			if (format[i] == '%' && format[i + 1] == '%')
+			{	
+				_putchar('%');
+				ch++;
+			}
 			i++;
 		}
 		else
@@ -67,6 +62,8 @@ int _printf(const char *format, ...)
 		}
 		ch += a;
 		i++;
+		/*if (a == -1)
+			return(-1);*/
 	}
 	va_end(list);
 	return (ch);
