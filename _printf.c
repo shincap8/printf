@@ -3,9 +3,9 @@
 #include <stdarg.h>
 #include <stdio.h>
 /**
- *
- *
- *
+ * _printf - function that converts and prints arguments
+ * @format: Arguments
+ * Return: Returns number of bytes of charcters
  */
 
 int _printf(const char *format, ...)
@@ -20,6 +20,12 @@ int _printf(const char *format, ...)
 
 	int i = 0, j, ch = 0;
 	va_list list;
+
+	if (!format)
+		return (-1);
+
+	if (i == 0 && format[i + 1])
+		return (-1);
 
 	va_start(list, format);
 	while (format != NULL && format[i] != '\0')
