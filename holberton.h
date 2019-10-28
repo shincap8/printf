@@ -1,7 +1,13 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 #include <stdarg.h>
-
+/**
+ * struct op - structer for an op
+ * @form: conversion specifier
+ * @f: name of the function
+ *
+ * Description: this structure help us call the functions
+ */
 typedef struct op
 {
 			char form;
