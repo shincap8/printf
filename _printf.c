@@ -50,6 +50,8 @@ int _printf(const char *format, ...)
 		a = 0;
 		if (format[i] == '%')
 		{
+			if (format[i] == '%' && format[i + 1] == '\0')
+				return (-1);
 			j = i;
 			while (format[i + 1] == ' ')
 				i++;
@@ -71,8 +73,6 @@ int _printf(const char *format, ...)
 			ch++;
 		}
 		ch += a, i++;
-		if (format[i] == '%' && format[i + 1] == '\0')
-			return (-1);
 	}
 	va_end(list);
 	return (ch);
