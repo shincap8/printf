@@ -11,12 +11,7 @@ int ptr_int(va_list list)
 {
 	int x = va_arg(list, int), ch = 0;
 
-	if (x == '\0')
-	{
-		return (0);
-	}
-	else
-		ch = print_number(x);
+	ch = print_number(x);
 	return (ch);
 }
 
