@@ -38,6 +38,8 @@ void print_bin(int n)
 	if (n > 0)
 	{
 		b = n % 2;
+		if (b == 1)
+			n = n - 1;
 		print_bin(n / 2);
 		_putchar('0' + b);
 	}
