@@ -18,7 +18,7 @@ int print_number(int n)
 	{
 		_putchar('-');
 		cont++;
-		n = n * - 1;
+		n = n * -1;
 	}
 	p = n;
 	if (p > 9)
