@@ -12,7 +12,7 @@ int ptr_char(va_list list)
 
 	if (letter == 0)
 	{
-		return (0);
+		return (1);
 	}
 	else
 		_putchar(letter);
