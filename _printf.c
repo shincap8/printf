@@ -16,7 +16,6 @@ int _arr(const char x, va_list list)
 			{'s', ptr_str},
 			{'d', ptr_int},
 			{'i', ptr_int},
-			{'u', ptr_uns},
 			{'\0', NULL}
 	};
 
@@ -57,15 +56,13 @@ int _printf(const char *format, ...)
 			a = _arr(format[i + 1], list);
 			if ((format[i + 1] == '%'))
 				a = 0, ch++, _putchar('%');
-			else if (format[i] == '%' && format[i + 1] != '\0' && a == -1)
+			else if ((format[i] == '%' && format[i + 1] != '\0') && a == -1)
 				_putchar(format[i]), _putchar(format[i + 1]), ch += 2, a = 0;
 			if (a == -1)
 			{
 				_putchar(format[j]), _putchar(format[i]);
 				_putchar(format[i + 1]), ch += 3, a = 0;
 			}
-			if (format[i] == '%' && format[i + 1] == '\0')
-				return (-1);
 			i++;
 		}
 		else
@@ -74,6 +71,8 @@ int _printf(const char *format, ...)
 			ch++;
 		}
 		ch += a, i++;
+		if (format[i] == '%' && format[i + 1] == '\0')
+			return (-1);
 	}
 	va_end(list);
 	return (ch);
