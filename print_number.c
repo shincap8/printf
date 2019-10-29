@@ -1,4 +1,6 @@
 #include "holberton.h"
+#include <stdio.h>
+#include <stdarg.h>
 /**
 * print_number - prints an integer
 * @n: integern
@@ -8,10 +10,8 @@
 */
 int print_number(int n)
 {
-	int p, m, c, cont = 0;
+	int p, m = 1, c = 0, cont = 0;
 
-	m = 1;
-	c = 0;
 	if (n < 0)
 	{
 		_putchar('-');
