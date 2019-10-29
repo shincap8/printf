@@ -54,7 +54,7 @@ int _printf(const char *format, ...)
 			while (format[j + 1] == ' ')
 				j++;
 			a = _arr(format[i + 1], list);
-			if ((format[i] == '%' && format[i + 1] == '%') || (format[i] == '%' && format[j + 1] == '%'))
+			if ((format[i + 1] == '%') || (format[j + 1] == '%'))
 			{
 				a = 0, i = j;
 				_putchar('%');
@@ -63,8 +63,7 @@ int _printf(const char *format, ...)
 			else if ((format[i] == '%' && format[i + 1] != '\0') && a == -1)
 			{
 				a = 0;
-				_putchar(format[i]);
-				_putchar(format[i + 1]);
+				_putchar(format[i]), _putchar(format[i + 1]);
 				ch += 2;
 			}
 			i++;
@@ -74,8 +73,7 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			ch++;
 		}
-		ch += a;
-		i++;
+		ch += a, i++;
 		if (format[i] == '%' && format[i + 1] == '\0')
 			return (-1);
 	}
