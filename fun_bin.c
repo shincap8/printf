@@ -9,7 +9,7 @@
  */
 int ptr_bin(va_list list)
 {
-	int x = va_arg(list, int), ch = 0;
+	unsigned int x = va_arg(list, unsigned int), ch = 0;
 
 	if (x == 0)
 	{
@@ -18,15 +18,7 @@ int ptr_bin(va_list list)
 	}
 	else
 	{
-		if(x < 0)
-		{
-			x = x * -1;
-			print_bin(x);
-			_putchar('0');
-			ch++;
-		}
-		else
-			print_bin(x);
+		print_bin(x);
 		while (x)
 		{
 			x = x / 2;
@@ -39,7 +31,7 @@ int ptr_bin(va_list list)
  * print_bin - function that prints a variable type b
  * @n: number to convert
  */
-void print_bin(int n)
+void print_bin(unsigned int n)
 {
 	int b;
 
