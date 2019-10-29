@@ -10,7 +10,7 @@ int ptr_char(va_list list)
 {
 	char letter = va_arg(list, int);
 
-	if (letter == 0)
+	if (letter == '\0')
 	{
 		return (1);
 	}
