@@ -39,7 +39,7 @@ int _arr(const char x, va_list list)
  */
 int _printf(const char *format, ...)
 {
-	int j = 0, i = 0, a = 0, ch = 0;
+	int i = 0, j = 0, a = 0, ch = 0;
 	va_list list;
 
 	va_start(list, format);
@@ -51,20 +51,17 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			j = i;
-			while (format[j + 1] == ' ')
-				j++;
+			while (format[i + 1] == ' ')
+				i++;
 			a = _arr(format[i + 1], list);
-			if ((format[i + 1] == '%') || (format[j + 1] == '%'))
-			{
-				a = 0, i = j;
-				_putchar('%');
-				ch++;
-			}
+			if ((format[i + 1] == '%'))
+				a = 0, ch++, _putchar('%');
 			else if ((format[i] == '%' && format[i + 1] != '\0') && a == -1)
+				_putchar(format[i]), _putchar(format[i + 1]), ch += 2, a = 0;
+			if (a == -1)
 			{
-				a = 0;
-				_putchar(format[i]), _putchar(format[i + 1]);
-				ch += 2;
+			_putchar(format[j]), _putchar(format[i]);
+			_putchar(format[i + 1]), ch += 3, a = 0;
 			}
 			i++;
 		}
