@@ -10,24 +10,25 @@
 */
 int print_number(int n)
 {
-	int p, m = 1, c = 0, cont = 0;
+	int m = 1, c = 0, cont = 0;
+	unsigned int p;
 
+	p = n;
 	if (n < 0)
 	{
 		_putchar('-');
-		n = n * -1;
 		cont++;
 	}
-	if (n > 9)
+	if (p > 9)
 	{
-		p = n;
 		while (p > 9)
 		{
 			c++;
 			m = m * 10;
 			p = p / 10;
 		}
-		_putchar('0' + (n / m));
+		p = n;
+		_putchar('0' + (p / m));
 		m = m / 10;
 		cont++;
 		while (c > 0)
