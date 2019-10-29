@@ -19,4 +19,6 @@ int ptr_char(va_list list);
 int ptr_str(va_list list);
 int print_number(int n);
 int ptr_int(va_list list);
+int ptr_bin(va_list list);
+void print_bin(int n);
 #endif
