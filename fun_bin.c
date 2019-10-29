@@ -18,7 +18,15 @@ int ptr_bin(va_list list)
 	}
 	else
 	{
-		print_bin(x);
+		if(x < 0)
+		{
+			x = x * -1;
+			print_bin(x);
+			_putchar('0');
+			ch++;
+		}
+		else
+			print_bin(x);
 		while (x)
 		{
 			x = x / 2;
