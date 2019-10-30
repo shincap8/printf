@@ -16,3 +16,22 @@
 | [fun_oct.c](fun_oct.c) |This function prints Octal representation of Integer. |
 | [fun_Hex.c](fun_Hex.c) |This function prints Hexadecimal representation of Unsigned Integer in uppercase. |
 | [fun_hex.c](fun_hex.c) |This function prints Hexadecimal representation of Unsigned Integer in lowercase. |
+---
+### Examples of use
+
+Below you can find use of come flags.
+
+```
+_printf("Unsigned:[%u]\n", 2147483647);
+_printf("Negative:[%d]\n", -762534);
+_printf("Character:[%c]\n", 'H');
+_printf("Binary:[%b]\n", 685947);
+```
+Here are the result of this actions:
+
+```
+Unsigned:[2147483647]
+Negative:[-762534]
+Character:[H]
+Binary:[10100111011101111011]
+```
