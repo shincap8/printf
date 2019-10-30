@@ -24,6 +24,6 @@ int ptr_uns(va_list list)
 	unsigned int x = va_arg(list, unsigned int);
 	int ch = 0;
 
-	ch = print_number(x);
+	ch = print_unsigned(x);
 	return (ch);
 }

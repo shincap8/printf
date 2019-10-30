@@ -28,4 +28,5 @@ int ptr_hex(va_list list);
 void print_hex(unsigned int n);
 int ptr_Hex(va_list list);
 void print_Hex(unsigned int n);
+int print_unsigned(unsigned int n);
 #endif
