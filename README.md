@@ -1,6 +1,5 @@
 <h1 align ="center"> _Printf() </h1><br>
 
-<<<<<<< HEAD
 ## Table of Contents 
 ---
 - [Authors](#authors)
@@ -15,7 +14,7 @@
 ---
 ## Authors 
 ---
-* [Camilo Isaza](://twitter.com/Andresmelek)
+* [Camilo Isaza](https:://twitter.com/Andresmelek)
 * [Sara Hincapié](https://twitter.com/SaraHincapiMon1)
 ---
 ## Introduction
@@ -29,11 +28,6 @@ These arguments given in the format string will execute the task by the given sp
 ```
 int \_printf(const char \*format, ...);
 ```
-=======
-## Description
-
-> First project for Holberton School. This project is for us to show what we have learn in C, the use of loops, conditional, macros, structures, variables, pointers and more, also to test our teamwork skills.
->>>>>>> 438cd268beaebbfd37529c0f71134492d5110838
 ---
 ## Installation 
 ---
@@ -59,11 +53,7 @@ And then run the file.sh to see the outputs, with the line:
 
 | File Name | Description and contents |
 | --- | --- |
-<<<<<<< HEAD
 | [manpage](man_3_printf) | This is the manpage for function _printf, this will help us know how to use printf and the many uses of it, in here we can find examples and the correct sintaxis of the command.|
-=======
-| [manpage](man_3_printf) manpage of or function printf, this will help us know how to use printf and the many uses of it, in here we can find examples and the correct sintaxis of the command.|
->>>>>>> 438cd268beaebbfd37529c0f71134492d5110838
 | [holberton.h](holberton.h) |This is the headers file where we can find all the prototypes of our functions and the structures. |
 | [printf.c](_printf.c) |In here we can find the array of structures and the main function of _printf. |
 | [fun_str.c](fun_str.c) |Here we can find our function putchar and the functions to print characters and strings. |
@@ -74,7 +64,6 @@ And then run the file.sh to see the outputs, with the line:
 | [fun_Hex.c](fun_Hex.c) |This function prints Hexadecimal representation of Unsigned Integer in uppercase. |
 | [fun_hex.c](fun_hex.c) |This function prints Hexadecimal representation of Unsigned Integer in lowercase. |
 ---
-<<<<<<< HEAD
 ## Features 
 
 * %c : with a char argument, prints that char
@@ -97,8 +86,6 @@ And then run the file.sh to see the outputs, with the line:
 
 * %X : with an integer argument, prints the hexadecimal notation with uppercase letters
 ---
-=======
->>>>>>> 438cd268beaebbfd37529c0f71134492d5110838
 ### Examples of use
 
 Below you can find use of come flags.
@@ -117,7 +104,6 @@ Negative:[-762534]
 Character:[H]
 Binary:[10100111011101111011]
 ```
-<<<<<<< HEAD
 
 
 ## Built With
@@ -128,6 +114,3 @@ Binary:[10100111011101111011]
 * [Peppermint](https://www.osboxes.org/peppermint/)
 * [Ubuntu](https://www.ubuntu.com/)
 * [GCC 4.8.4 Compiler](https://gcc.gnu.org/)
-
-=======
->>>>>>> 438cd268beaebbfd37529c0f71134492d5110838
