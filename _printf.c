@@ -19,6 +19,8 @@ int _arr(const char x, va_list list)
 			{'b', ptr_bin},
 			{'u', ptr_uns},
 			{'o', ptr_o},
+			{'x', ptr_hex},
+			{'X', ptr_Hex},
 			{'\0', NULL}
 	};
 

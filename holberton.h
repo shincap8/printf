@@ -24,4 +24,8 @@ void print_bin(unsigned int n);
 int ptr_uns(va_list list);
 int ptr_o(va_list list);
 void print_o(unsigned int n);
+int ptr_hex(va_list list);
+void print_hex(unsigned int n);
+int ptr_Hex(va_list list);
+void print_Hex(unsigned int n);
 #endif

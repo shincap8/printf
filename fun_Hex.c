@@ -3,11 +3,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * ptr_o - function that prints the octal number
+ * ptr_Hex - function that prints in uppercase hexadecimal number
  * @list: list of functions
  * Return: the number of characters printed
  */
-int ptr_o(va_list list)
+int ptr_Hex(va_list list)
 {
 	unsigned int x = va_arg(list, unsigned int), ch = 0;
 
@@ -18,27 +18,30 @@ int ptr_o(va_list list)
 	}
 	else
 	{
-		print_o(x);
+		print_Hex(x);
 		while (x)
 		{
-			x = x / 8;
+			x = x / 16;
 			ch++;
 		}
 	}
 	return (ch);
 }
 /**
- * print_o - function that prints  a variable in octal
+ * print_Hex - function that prints a variable in hexadecimal
  * @n: number to convert
  */
-void print_o(unsigned int n)
+void print_Hex(unsigned int n)
 {
 	int b;
 
 	if (n > 0)
 	{
-		b = n % 8;
-		print_o(n / 8);
-		_putchar('0' + b);
+		b = n % 16;
+		print_Hex(n / 16);
+		if (b > 9)
+			_putchar(b + 55);
+		else
+			_putchar('0' + b);
 	}
 }
