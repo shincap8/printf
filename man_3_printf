@@ -1,0 +1,120 @@
+.TH _printf 3 "30 October  2019" "_printf man page"
+
+.SH NAME
+_printf \- prints and converts arguments to the standard output.
+
+.SH SYNOPSIS
+.B
+#include "holberton.h"
+.LP
+int _printf(const char *format, ...);
+int _putchar(char c);
+int ptr_char(va_list list);
+int ptr_str(va_list list);
+int print_number(int n);
+int ptr_int(va_list list);
+int ptr_bin(va_list list);
+void print_bin(unsigned int n);
+int ptr_uns(va_list list);
+int ptr_o(va_list list);
+void print_o(unsigned int n);
+int ptr_hex(va_list list);
+void print_hex(unsigned int n);
+int ptr_Hex(va_list list);
+void print_Hex(unsigned int n);
+.LP
+.B
+#include <stdarg.h>
+.LP
+int vprintf(const char *format, va_list ap);
+int vfprintf(FILE *stream, const char *format, va_list ap);
+int vsprintf(char *str, const char *format, va_list ap);
+int vsnprintf(char *str, size_t size, const char *format, va_list ap); 
+.LP
+.B _printf
+.B (const char *format, ...);
+
+.SH DESCRIPTION
+The _printf() function prints and converts arguments to the standard output based on the format stringgiven by the user.
+These arguments given in the format string will execute the task by the given specifier placed in the _printf() function.
+.LP
+.B Return Value
+.RS 
+The _printf() function returns the number of characters printed to the standard output(excluding the null byte ('\0') used to end output to strings). A null character will not be printed and  be considered in the character count either.
+_(
+.LP
+.B
+Format of the format string
+.RS
+ The format string which will specifie the task to perform in the _printf() function, is a single character, a chain of characters or a string and conversion specifications that will be printed in the standard output.
+.LP
+
+In order to execute a specific task, the  specification character has to be sent begining  with a % symbol and end with a conversion character which is a single character in lowercase or uppercase. This conversion specification determines which one of the formats and conversion of the arguments that follow the format string is needed to perform the task.
+The arguments must correspond properly (after type promotion) with the conversion specifier.
+These arguments are optional, and should only be necessary when a conversion specification is present in the format string.
+.LP
+By default, the arguments are used in the order given, where each '*' and each conversion specifier asks for the next argument (and it is an error if insufficiently many arguments are given).
+.LP
+The _printf function can be printed in two different ways:
+.LP
+.B
+CASE I
+.LP
+_printf("%d", age);
+.LP
+In this way the _printf() function will print the value given by variable age where the symbol and character "%d" are.
+.LP
+.B
+CASE II
+.LP
+_printf("%d %s %f", age, name, height);
+.LP
+In this way the _printf() function will print several values, depending in the amount that function receives, is the amount that the function will print. In this case the _printf() function will print three values, in the order that is given by the variables age, name and height.
+.LP
+.B
+The flag characters
+.LP
+The character % is followed by zero or more of the following flags following lists the various flags and conversion characters that are available for the _printf() function. If used, they must follow the percent symbol in the order they are listed.
+.LP
+.RS 
+.B %c
+.RS 
+Accepts an argument type of int. Converts to an unsigned char type and prints a single character to the standard output.
+.LP
+.RE
+.B %s
+.RS
+Accepts an argument type of char *. Prints the specified characters from the string until a null character is reached.
+.LP
+.RE
+.B %d, %i
+.RS
+Accepts an argument type of int. Prints the signed decimal notation to the standard output.
+.LP
+.RE
+.B %b
+.RS
+Accepts an argument type of unsigned int. Prints the binary format of the argument to the standard output.
+.LP
+.RE
+.B %u
+.RS
+Accepts an argument type of int. Prints the unsigned decimal notation to the standard output.
+.LP
+.RE
+.B %o
+.RS
+Accepts an argument type of int. Prints the unsigned octal notation to the standard output.
+.LP
+.RE
+.B %X, %x
+.RS
+Accepts an argument type of int. Prints the unsigned hexadecimal notation to the standard output. 'X' indicates that capital letters will be used (A-F). 'x' indicates that lowercase letters will be used (a-f).
+.LP
+.SH BUGS
+The _printf() function returns the number of characters printed to the output screen. As a result, users must be careful to not overflow the function by inserting an excessively long format string or too many input arguments.
+.LP
+In the event that conversion specifiers are present in the format string, but no arguments are provided, then a possible segmentation error might occur. Because the variable type, va_list, is unable to detect the end of the variable argument list, there are no means of avoiding this issue in the _printf() function.
+
+.SH AUTHOR
+Camilo Isaza and Sara Hincapié.
