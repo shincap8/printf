@@ -39,9 +39,9 @@ void print_Hex(unsigned int n)
 	{
 		b = n % 16;
 		print_Hex(n / 16);
-		if (b > 9)
-			_putchar(b + 55);
+		if (b < 10)
+			_putchar(b + 48);
 		else
-			_putchar('0' + b);
+			_putchar(b + 55);
 	}
 }

@@ -39,9 +39,9 @@ void print_hex(unsigned int n)
 	{
 		b = n % 16;
 		print_hex(n / 16);
-		if (b > 9)
-			_putchar(b + 87);
+		if (b < 10)
+			_putchar(b + 48);
 		else
-			_putchar('0' + b);
+			_putchar(b + 87);
 	}
 }
