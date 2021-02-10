@@ -14,8 +14,8 @@
 ---
 ## Authors 
 ---
-* Camilo Isaza [Twitter](https://twitter.com/Andresmelek) - [Linkedin] (https://www.linkedin.com/in/andresmelek/)
-* Sara Hincapié [Twitter](https://twitter.com/sahimo1) - [Linkedin] (https://www.linkedin.com/in/sahimo/)
+* Camilo Isaza [Twitter](https://twitter.com/Andresmelek) - [Linkedin](https://www.linkedin.com/in/andresmelek/)
+* Sara Hincapié [Twitter](https://twitter.com/sahimo1) - [Linkedin](https://www.linkedin.com/in/sahimo/)
 ---
 ## Introduction
 > First project for Holberton School. This project is for us to show what we have learn in C, the use of loops, conditional, macros, structures, variables, pointers and more, also to test our teamwork skills.
